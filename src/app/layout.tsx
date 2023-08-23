@@ -1,4 +1,5 @@
-import './globals.css'
+import { Sidebar } from '@/components/Sidebar'
+import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="grid min-h-screen grid-cols-app antialiased">
+          <Sidebar />
+          <main className="px-8 pb-12 pt-8">{children}</main>
+        </div>
+      </body>
     </html>
   )
 }
